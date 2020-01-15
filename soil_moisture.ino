@@ -1,4 +1,5 @@
-const int measureSoilSensor = A0; //10;
+const int measureSoilSensor = A0; // Analog pin
+// const int measureSoilSensor = 10; //Digital pin 
  
 void setup()
 {
@@ -8,18 +9,18 @@ void setup()
  
 void loop()
 {
-   int humidity = analogRead(measureSoilSensor); //digitalRead(measureSoilSensor);
+   int humidity = analogRead(measureSoilSensor); //analog read
+   //int humidity = digitalRead(measureSoilSensor); //digital read
+   
    Serial.println(humidity);
    
-   //if (humidity == HIGH)
-   /*
-   if (humidity < 500)
-   {
-      Serial.println("wet");   
+   
+   if (humidity == HIGH || humidity < 500){
+       Serial.println("wet");  
    }
    else{
-    Serial.println("NOT wet");
+       Serial.println("NOT wet");
    }
-   */
+   
    delay(1000);
 }
